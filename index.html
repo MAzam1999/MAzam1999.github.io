@@ -3,10 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Azam | Portfolio</title>
+    <title>Muhammad Azam | Strategic Command</title>
+    <style>
+        :root {
+            --bg-color: #0d1117; /* GitHub Dark Dimmed */
+            --text-color: #c9d1d9;
+            --accent-color: #3fb950; /* Signal Green */
+            --secondary-color: #8b949e;
+            --border-color: #30363d;
+            --card-bg: #161b22;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace; /* Spartan/Terminal Aesthetic */
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER --- */
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .bio {
+            color: var(--secondary-color);
+            max-width: 600px;
+        }
+
+        /* --- SECTIONS --- */
+        h2 {
+            color: var(--text-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-top: 3rem;
+            text-transform: uppercase;
+        }
+
+        /* --- GRID SYSTEM --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* --- PROJECT CARDS --- */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .card h3 a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .card h3 a::before {
+            content: "> ";
+            color: var(--accent-color);
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            font-size: 0.75rem;
+            color: var(--secondary-color);
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.5rem;
+            display: flex;
+            gap: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        a.btn {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            border: 1px solid var(--accent-color);
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+        
+        a.btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+    </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
-    <h1>Signal Received.</h1>
-    <p>The site is live.</p>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Muhammad Azam</h1>
+            <span class="tagline">Identity: Warrior-Philosopher | Tech Lead | Ph.D.</span>
+            <p class="bio">
+                <strong>Grand Strategy:</strong> Focusing on Geopolitics and Military Strategy through the lens of power dynamics.
+                <br>
+                <strong>Psych Profile:</strong> Reluctant Great Power (ISFJ/INTJ Hybrid).
+            </p>
+            <div style="margin-top: 1rem;">
+                <a href="https://github.com/MAzam1999" class="btn">:: GitHub Intelligence ::</a>
+                <a href="mailto:your-email@example.com" class="btn">:: Secure Comms ::</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Active Operations [n8n Agents]</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h3><a href="https://github.com/MAzam1999/n8n-Projects/blob/main/Supabase-OpenAI-RAG-Agent.json" target="_blank">Supabase RAG Engine</a></h3>
+                    <p>Knowledge retrieval system. Injects vectorized context into LLMs using Supabase and OpenAI for high-precision intelligence.</p>
+                    <div class="tech-stack">
+                        <span>[Supabase]</span>
+                        <span>[OpenAI]</span>
+                        <span>[Vector Store]</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><a href="https://github.com/MAzam1999/n8n-Projects/blob/main/AI-Meeting-Ops-Agent.json" target="_blank">AI Meeting Ops</a></h3>
+                    <p>Tactical meeting intelligence. Automates transcription, summarization, and action item extraction from operational briefings.</p>
+                    <div class="tech-stack">
+                        <span>[n8n]</span>
+                        <span>[AI Parsing]</span>
+                        <span>[Ops]</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><a href="https://github.com/MAzam1999/n8n-Projects/blob/main/AI-Qualifying-Booking-Agent.json" target="_blank">The Gatekeeper</a></h3>
+                    <p>Autonomous sentry. Qualifies inbound leads against strict criteria before granting calendar access.</p>
+                    <div class="tech-stack">
+                        <span>[Booking]</span>
+                        <span>[Lead Qual]</span>
+                        <span>[Automation]</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><a href="https://github.com/MAzam1999/n8n-Projects/blob/main/HubSpot-Airtable-AI-Agent.json" target="_blank">CRM Logistics Sync</a></h3>
+                    <p>Bridges data silos between HubSpot and Airtable. Uses AI to enrich and format data during transit.</p>
+                    <div class="tech-stack">
+                        <span>[HubSpot]</span>
+                        <span>[Airtable]</span>
+                        <span>[Data Ops]</span>
+                    </div>
+                </div>
+
+                 <div class="card">
+                    <h3><a href="https://github.com/MAzam1999/n8n-Projects/blob/main/Gmail-OpenAI-Drive-Archive.json" target="_blank">Comms Archival</a></h3>
+                    <p>Secure correspondence logging. Sanitizes Gmail inputs via OpenAI and archives to Drive storage.</p>
+                    <div class="tech-stack">
+                        <span>[Gmail]</span>
+                        <span>[Drive]</span>
+                        <span>[Archival]</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Strategic Priorities</h2>
+            <ul>
+                <li><strong>Current Objective:</strong> Master's Degree at Institute of Space Technology.</li>
+                <li><strong>Development:</strong> Building "Agentic Hunter" for automated recruitment sourcing.</li>
+                <li><strong>Analogy Engine:</strong> Macro-Geopolitics, Cold War Dynamics, Fall of Rome.</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>System Status: ONLINE // End of Transmission</p>
+            <p>&copy; 2026 Muhammad Azam</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
