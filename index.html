@@ -10,15 +10,17 @@
     
     <style>
         :root {
-            /* Modern Dark Theme Palette */
-            --bg-deep: #050505;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --bg-card-hover: rgba(255, 255, 255, 0.06);
-            --text-primary: #ffffff;
-            --text-secondary: #a1a1aa;
-            --accent-color: #3b82f6; /* Electric Blue */
-            --accent-glow: rgba(59, 130, 246, 0.4);
-            --border-color: rgba(255, 255, 255, 0.1);
+            /* Modern Light "Frost" Theme */
+            --bg-deep: #f8fafc; /* Very light slate/white */
+            --bg-card: rgba(255, 255, 255, 0.65); /* Frosted Glass */
+            --bg-card-hover: rgba(255, 255, 255, 0.95);
+            --text-primary: #0f172a; /* Deep Slate (Not harsh black) */
+            --text-secondary: #475569; /* Medium Slate */
+            --accent-color: #2563eb; /* Professional Blue */
+            --accent-light: rgba(37, 99, 235, 0.1);
+            --border-color: rgba(226, 232, 240, 0.8);
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
         }
 
         body {
@@ -35,12 +37,22 @@
         /* --- AMBIENT BACKGROUND GLOW --- */
         .ambient-glow {
             position: fixed;
-            top: -20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
+            top: -30%;
+            right: -10%;
+            width: 80vw;
             height: 80vh;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .ambient-glow-2 {
+            position: fixed;
+            bottom: -20%;
+            left: -10%;
+            width: 70vw;
+            height: 70vh;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
             z-index: -1;
             pointer-events: none;
         }
@@ -54,7 +66,7 @@
 
         /* --- NAVIGATION --- */
         nav {
-            background: rgba(5, 5, 5, 0.7);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             position: sticky;
@@ -71,7 +83,7 @@
         }
 
         .nav-logo {
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.25rem;
             color: var(--text-primary);
             text-decoration: none;
@@ -92,7 +104,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--text-primary);
+            color: var(--accent-color);
         }
 
         /* --- HERO SECTION --- */
@@ -103,19 +115,17 @@
 
         .hero h1 {
             font-size: 3.5rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 16px;
-            letter-spacing: -1px;
-            background: linear-gradient(to right, #ffffff, #a1a1aa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            letter-spacing: -1.5px;
+            color: var(--text-primary);
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--accent-color);
             margin-bottom: 24px;
-            font-weight: 500;
+            font-weight: 600;
             display: block;
         }
 
@@ -139,7 +149,7 @@
         }
 
         .social-icon:hover {
-            color: var(--text-primary);
+            color: var(--accent-color);
             transform: translateY(-2px);
         }
 
@@ -156,20 +166,21 @@
         h2 {
             font-size: 2rem;
             margin-bottom: 48px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: -0.5px;
             display: flex;
             align-items: center;
             gap: 12px;
+            color: var(--text-primary);
         }
 
         h2::before {
             content: '';
             display: block;
-            width: 4px;
+            width: 6px;
             height: 24px;
             background: var(--accent-color);
-            border-radius: 2px;
+            border-radius: 4px;
         }
 
         /* --- TIMELINE (EXPERIENCE) --- */
@@ -199,10 +210,11 @@
             top: 6px;
             width: 14px;
             height: 14px;
-            background: var(--bg-deep);
+            background: #ffffff;
             border: 2px solid var(--accent-color);
             border-radius: 50%;
             z-index: 1;
+            box-shadow: 0 0 0 4px var(--bg-deep); /* White ring effect */
         }
 
         .timeline-date {
@@ -211,12 +223,13 @@
             margin-bottom: 8px;
             font-family: monospace;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .timeline-title {
             font-size: 1.3rem;
-            font-weight: 600;
+            font-weight: 700;
             margin: 0 0 4px 0;
             color: var(--text-primary);
         }
@@ -224,6 +237,7 @@
         .timeline-org {
             font-size: 1rem;
             color: var(--text-secondary);
+            font-weight: 500;
             margin-bottom: 16px;
         }
 
@@ -250,25 +264,26 @@
 
         .project-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border: 1px solid #ffffff;
+            border-radius: 16px;
             padding: 32px;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
             background: var(--bg-card-hover);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-light);
         }
 
         .project-title {
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 700;
             margin: 0 0 12px 0;
         }
 
@@ -276,6 +291,10 @@
             color: var(--text-primary);
             text-decoration: none;
             transition: color 0.2s;
+        }
+        
+        .project-title a:hover {
+            color: var(--accent-color);
         }
 
         .project-desc {
@@ -293,19 +312,12 @@
         }
 
         .tag {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-secondary);
+            background: var(--accent-light);
+            color: var(--accent-color);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .project-card:hover .tag {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--accent-color);
-            border-color: rgba(59, 130, 246, 0.2);
+            font-weight: 600;
         }
 
         .btn-link {
@@ -314,37 +326,41 @@
             gap: 6px;
             margin-top: 20px;
             font-size: 0.9rem;
+            font-weight: 600;
             color: var(--text-primary);
             text-decoration: none;
             opacity: 0.8;
-            transition: opacity 0.2s;
+            transition: all 0.2s;
         }
 
         .btn-link:hover {
             opacity: 1;
             color: var(--accent-color);
+            gap: 10px; /* Slight animation */
         }
 
         /* --- EDUCATION CARD --- */
         .edu-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border: 1px solid #ffffff;
+            border-radius: 16px;
             padding: 32px;
             backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: var(--shadow-soft);
         }
 
-        .edu-info h3 { margin: 0 0 8px 0; font-size: 1.3rem; }
+        .edu-info h3 { margin: 0 0 8px 0; font-size: 1.3rem; font-weight: 700; }
         .edu-info p { margin: 0; color: var(--text-secondary); }
         .edu-date { 
             font-family: monospace; 
             color: var(--accent-color); 
-            background: rgba(59, 130, 246, 0.1);
+            background: var(--accent-light);
             padding: 6px 12px;
-            border-radius: 6px;
+            border-radius: 8px;
+            font-weight: 600;
         }
 
         /* --- FOOTER --- */
@@ -369,6 +385,7 @@
 <body>
 
     <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
 
     <nav>
         <div class="container nav-content">
