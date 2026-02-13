@@ -181,8 +181,13 @@
         }
 
         .social-icon:hover {
-            color: var(--accent-color);
+            color: #0077b5; /* LinkedIn Blue on hover */
             transform: translateY(-2px);
+        }
+        
+        /* Specific hover for Github to keep it black/dark */
+        .social-icon[title="GitHub"]:hover {
+            color: #333;
         }
 
         /* --- SECTION STYLES --- */
@@ -463,6 +468,7 @@
                 <a href="#projects">Projects</a>
                 <a href="#education">Education</a>
                 <a href="https://github.com/MAzam1999" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/muhammad-azam-62a875268/" target="_blank">LinkedIn</a>
             </div>
         </div>
     </nav>
@@ -479,6 +485,9 @@
                 <div class="social-links">
                     <a href="https://github.com/MAzam1999" target="_blank" class="social-icon" title="GitHub">
                         <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhammad-azam-62a875268/" target="_blank" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
             </div>
