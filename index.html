@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Muhammad Azam - AI Automation Engineer specializing in Autonomous Agents, n8n, and LangGraph.">
+    <meta property="og:title" content="Muhammad Azam | AI Automation Engineer">
+    <meta property="og:description" content="Architecting autonomous AI agent ecosystems and scalable workflow automation.">
+    <meta property="og:image" content="https://github.com/MAzam1999.png">
+    
     <title>Muhammad Azam | AI Automation Engineer</title>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
             /* Modern Light "Frost" Theme */
-            --bg-deep: #f8fafc; /* Very light slate/white */
-            --bg-card: rgba(255, 255, 255, 0.65); /* Frosted Glass */
-            --bg-card-hover: rgba(255, 255, 255, 0.95);
-            --text-primary: #0f172a; /* Deep Slate (Not harsh black) */
-            --text-secondary: #475569; /* Medium Slate */
-            --accent-color: #2563eb; /* Professional Blue */
-            --accent-light: rgba(37, 99, 235, 0.1);
+            --bg-deep: #f8fafc;
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --bg-card-hover: rgba(255, 255, 255, 0.9);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --accent-light: rgba(37, 99, 235, 0.08);
             --border-color: rgba(226, 232, 240, 0.8);
-            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 20px 30px -4px rgba(0, 0, 0, 0.1);
         }
 
         body {
@@ -41,7 +46,7 @@
             right: -10%;
             width: 80vw;
             height: 80vh;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
             z-index: -1;
             pointer-events: none;
         }
@@ -52,7 +57,7 @@
             left: -10%;
             width: 70vw;
             height: 70vh;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
             z-index: -1;
             pointer-events: none;
         }
@@ -67,8 +72,8 @@
         /* --- NAVIGATION --- */
         nav {
             background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -98,7 +103,7 @@
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.2s ease;
         }
@@ -110,15 +115,42 @@
         /* --- HERO SECTION --- */
         .hero {
             padding: 100px 0 60px 0;
-            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-image-container {
+            flex-shrink: 0;
+        }
+
+        .hero-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-hover);
+            object-fit: cover;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin: 0 0 16px 0;
             letter-spacing: -1.5px;
             color: var(--text-primary);
+            line-height: 1.1;
         }
 
         .hero-subtitle {
@@ -130,11 +162,11 @@
         }
 
         .hero-bio {
-            max-width: 700px;
             font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             line-height: 1.7;
+            max-width: 600px;
         }
 
         .social-links {
@@ -165,7 +197,7 @@
 
         h2 {
             font-size: 2rem;
-            margin-bottom: 48px;
+            margin-bottom: 40px;
             font-weight: 700;
             letter-spacing: -0.5px;
             display: flex;
@@ -181,6 +213,32 @@
             height: 24px;
             background: var(--accent-color);
             border-radius: 4px;
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-item {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.2s;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-2px);
         }
 
         /* --- TIMELINE (EXPERIENCE) --- */
@@ -214,7 +272,7 @@
             border: 2px solid var(--accent-color);
             border-radius: 50%;
             z-index: 1;
-            box-shadow: 0 0 0 4px var(--bg-deep); /* White ring effect */
+            box-shadow: 0 0 0 4px var(--bg-deep);
         }
 
         .timeline-date {
@@ -278,7 +336,7 @@
             transform: translateY(-5px);
             background: var(--bg-card-hover);
             box-shadow: var(--shadow-hover);
-            border-color: var(--accent-light);
+            border-color: rgba(37, 99, 235, 0.3);
         }
 
         .project-title {
@@ -336,7 +394,7 @@
         .btn-link:hover {
             opacity: 1;
             color: var(--accent-color);
-            gap: 10px; /* Slight animation */
+            gap: 10px;
         }
 
         /* --- EDUCATION CARD --- */
@@ -350,6 +408,12 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: var(--shadow-soft);
+            transition: all 0.3s;
+        }
+        
+        .edu-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
         }
 
         .edu-info h3 { margin: 0 0 8px 0; font-size: 1.3rem; font-weight: 700; }
@@ -375,7 +439,10 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 60px; }
             .hero h1 { font-size: 2.5rem; }
+            .hero-bio { margin: 0 auto 30px auto; }
+            .social-links { justify-content: center; }
             .project-grid { grid-template-columns: 1fr; }
             .nav-links { gap: 20px; font-size: 0.85rem; }
             .edu-card { flex-direction: column; align-items: flex-start; gap: 15px; }
@@ -391,6 +458,7 @@
         <div class="container nav-content">
             <a href="#" class="nav-logo">MA.</a>
             <div class="nav-links">
+                <a href="#skills">Stack</a>
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#education">Education</a>
@@ -402,17 +470,34 @@
     <div class="container">
 
         <section id="about" class="hero">
-            <h1>Muhammad Azam</h1>
-            <span class="hero-subtitle">AI Automation Engineer | Tech Lead | R&D</span>
-            <p class="hero-bio">
-                Specializing in the architecture and deployment of Autonomous AI systems. 
-                I focus on building scalable intelligent agents, optimizing workflow automation, and bridging the gap between theoretical AI models and production-grade applications.
-                Currently pursuing advancement in Space Technology applications.
-            </p>
-            <div class="social-links">
-                <a href="https://github.com/MAzam1999" target="_blank" class="social-icon" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+            <div class="hero-content">
+                <h1>Muhammad Azam</h1>
+                <span class="hero-subtitle">AI Automation Engineer | Tech Lead | R&D</span>
+                <p class="hero-bio">
+                    Driven to become a global leader in Autonomous AI systems. I specialize in building scalable intelligent agents, optimizing workflow automation, and bridging the gap between theoretical AI models and production-grade applications.
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/MAzam1999" target="_blank" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="https://github.com/MAzam1999.png" alt="Muhammad Azam" class="hero-image">
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-item">AI Agents</div>
+                <div class="skill-item">n8n</div>
+                <div class="skill-item">LangGraph</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">OpenAI API</div>
+                <div class="skill-item">Supabase</div>
+                <div class="skill-item">Vector DBs</div>
+                <div class="skill-item">Automation</div>
             </div>
         </section>
 
