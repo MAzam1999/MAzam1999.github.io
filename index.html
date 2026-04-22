@@ -499,12 +499,20 @@
             <h2>Technical Stack</h2>
             <div class="skills-grid">
                 <div class="skill-item">AI Agents</div>
+                <div class="skill-item">Multi-Agent LLM</div>
                 <div class="skill-item">n8n</div>
                 <div class="skill-item">LangGraph</div>
+                <div class="skill-item">Next.js 16</div>
+                <div class="skill-item">TypeScript</div>
                 <div class="skill-item">Python</div>
+                <div class="skill-item">Claude API</div>
                 <div class="skill-item">OpenAI API</div>
+                <div class="skill-item">PostgreSQL</div>
+                <div class="skill-item">pgvector</div>
                 <div class="skill-item">Supabase</div>
-                <div class="skill-item">Vector DBs</div>
+                <div class="skill-item">FFmpeg</div>
+                <div class="skill-item">Pine Script</div>
+                <div class="skill-item">DevSecOps</div>
                 <div class="skill-item">Automation</div>
             </div>
         </section>
@@ -561,6 +569,83 @@
         <section id="projects">
             <h2>Selected Projects</h2>
             <div class="project-grid">
+
+                <div class="project-card">
+                    <h3 class="project-title"><a href="https://quraniclens.vercel.app" target="_blank">Multi-Agent Knowledge Engine</a></h3>
+                    <p class="project-desc">
+                        Production-scale research platform orchestrating a 4-agent LLM pipeline (DeepSeek V3 → Claude Sonnet 4.6 → Claude Opus 4.6 + Gemini 2.5) over a 100,000+ record pgvector knowledge base. Streaming SSE responses, OAuth2 identity, strict grounding against verified embedded data. Built for Hackathon 2026.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">Next.js 16</span>
+                        <span class="tag">pgvector</span>
+                        <span class="tag">Multi-Agent LLM</span>
+                        <span class="tag">Claude Opus</span>
+                    </div>
+                    <a href="https://quraniclens.vercel.app" target="_blank" class="btn-link">View Live Demo <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">AutoDirector — Autonomous Video Pipeline</h3>
+                    <p class="project-desc">
+                        No-code n8n workflow that converts a single text prompt into a fully narrated, subtitled 1080p MP4 in under 10 minutes. Dual-LLM script generation (DeepSeek + Gemini 3), parallel TTS and generative-video workers (ElevenLabs + Fal.ai Kling), and FFmpeg assembly with fallback-first error resilience.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">ElevenLabs</span>
+                        <span class="tag">Fal.ai</span>
+                        <span class="tag">FFmpeg</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">FreshTrack — Enterprise Inventory PWA</h3>
+                    <p class="project-desc">
+                        Mobile-first multi-tenant PWA for restaurant operations featuring batch-level FEFO tracking, barcode scanning (EAN/UPC/QR), waste analytics, and moving-average reorder forecasting. Architected on Next.js 16 Server Actions with Drizzle ORM and role-based Supabase Auth.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">Next.js 16</span>
+                        <span class="tag">Drizzle ORM</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">PWA</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Digital Sentinel — Zero-Trust Agent Infrastructure</h3>
+                    <p class="project-desc">
+                        Hardened deployment architecture for autonomous reconnaissance agents operating in hostile network environments. Rootless Podman containment, Tailscale mesh perimeter, UFW firewall, and dual-tier AI routing (Groq for rapid triage, Claude for deep reasoning) under Telegram-based human-in-the-loop C2.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">Podman</span>
+                        <span class="tag">Tailscale</span>
+                        <span class="tag">DevSecOps</span>
+                        <span class="tag">Zero Trust</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">SMC Trading Ecosystem</h3>
+                    <p class="project-desc">
+                        Production Smart Money Concepts indicator in Pine Script v5 (~770 LOC) featuring BOS/CHoCH structure tracking, Order Blocks, Fibonacci OTE zones, and Quasimodo reversal detection — no repainting. Shipped alongside a 7-agent Claude Code skill system that accelerates Pine Script R&D end-to-end.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">Pine Script</span>
+                        <span class="tag">TradingView</span>
+                        <span class="tag">Claude Skills</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">StreakFlow — Zero-Dependency Reactive SPA</h3>
+                    <p class="project-desc">
+                        Habit-tracking single-page app engineered with zero npm dependencies. Custom Proxy-based reactive store, PubSub event emitter, hash-based routing, and a GitHub-style contribution heatmap rendered in pure CSS/SVG. Async data layer designed to swap localStorage for Supabase without touching call sites.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">Vanilla JS</span>
+                        <span class="tag">Reactive Store</span>
+                        <span class="tag">SPA</span>
+                    </div>
+                </div>
 
                 <div class="project-card">
                     <h3 class="project-title"><a href="https://github.com/MAzam1999/n8n-Projects/tree/main/Supabase-OpenAI-RAG-Agent" target="_blank">Supabase RAG Engine</a></h3>
