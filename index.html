@@ -431,6 +431,62 @@
             font-weight: 600;
         }
 
+        /* --- CERTIFICATIONS --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .cert-card {
+            background: var(--bg-card);
+            border: 1px solid #ffffff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.2s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .cert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cert-info h4 {
+            margin: 0 0 4px 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .cert-info p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .cert-badge {
+            margin-top: 6px;
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent-color);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
         /* --- FOOTER --- */
         footer {
             text-align: center;
@@ -466,6 +522,7 @@
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#education">Education</a>
+                <a href="#certifications">Certifications</a>
                 <a href="https://github.com/MAzam1999" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/muhammad-azam-62a875268/" target="_blank">LinkedIn</a>
             </div>
@@ -726,6 +783,94 @@
                     <p style="font-size: 0.9rem; margin-top: 5px; color: var(--text-secondary);">Final Year Project: AI Applications in Space Technology</p>
                 </div>
                 <div class="edu-date">2023 - 2027 (Expected)</div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications & Achievements</h2>
+            <div class="cert-grid">
+
+                <div class="cert-card">
+                    <div class="cert-icon">🏆</div>
+                    <div class="cert-info">
+                        <h4>Meta Hacker Cup 2023</h4>
+                        <p>Meta — Competitive Programming</p>
+                        <span class="cert-badge">Achievement</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">🏅</div>
+                    <div class="cert-info">
+                        <h4>GRIP Internship</h4>
+                        <p>The Spark Foundation</p>
+                        <span class="cert-badge">Internship</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h4>Machine Learning Specialization</h4>
+                        <p>DeepLearning.AI · Stanford University</p>
+                        <span class="cert-badge">Coursera</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h4>Neural Networks and Deep Learning</h4>
+                        <p>DeepLearning.AI</p>
+                        <span class="cert-badge">Coursera</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h4>Generative AI with LLMs</h4>
+                        <p>DeepLearning.AI · Amazon Web Services</p>
+                        <span class="cert-badge">Coursera</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h4>AI Python for Beginners</h4>
+                        <p>DeepLearning.AI</p>
+                        <span class="cert-badge">Coursera</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h4>Statistics with Python Specialization</h4>
+                        <p>University of Michigan</p>
+                        <span class="cert-badge">Coursera</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h4>Programming for Everybody (Python)</h4>
+                        <p>University of Michigan</p>
+                        <span class="cert-badge">Coursera</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h4>Code in Place 2024</h4>
+                        <p>Stanford University</p>
+                        <span class="cert-badge">Certificate</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
