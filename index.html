@@ -476,6 +476,16 @@
             color: var(--text-secondary);
         }
 
+        .cert-info a {
+            color: var(--accent-color);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+
+        .cert-info a:hover { text-decoration: underline; }
+
         .cert-badge {
             margin-top: 6px;
             display: inline-block;
@@ -571,6 +581,15 @@
                 <div class="skill-item">Pine Script</div>
                 <div class="skill-item">DevSecOps</div>
                 <div class="skill-item">Automation</div>
+                <div class="skill-item">React 19</div>
+                <div class="skill-item">Prisma</div>
+                <div class="skill-item">Stripe</div>
+                <div class="skill-item">Docker</div>
+                <div class="skill-item">AWS (EC2, ECR)</div>
+                <div class="skill-item">GitHub Actions CI/CD</div>
+                <div class="skill-item">Vercel</div>
+                <div class="skill-item">Data Structures &amp; Algorithms</div>
+                <div class="skill-item">Data Engineering</div>
             </div>
         </section>
 
@@ -578,6 +597,18 @@
             <h2>Experience</h2>
             <div class="timeline">
                 
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">Summer 2026</div>
+                    <h3 class="timeline-title">Fellow</h3>
+                    <div class="timeline-org">Dev Weekends Fellowship 2026</div>
+                    <div class="timeline-desc">
+                        <ul>
+                            <li>Completed the fellowship's Engineering L0 &amp; L1, DSA, Data Engineering and Cloud &amp; DevOps class series.</li>
+                            <li>Shipped two projects: a full-stack LMS Platform (Stripe, Mux, Clerk) with a Docker + GitHub Actions CI/CD pipeline to AWS EC2, and a personal portfolio site with case studies.</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-date">Sep 2025 - Jan 2026</div>
@@ -624,7 +655,7 @@
         </section>
 
         <section id="projects">
-            <h2>Selected Projects</h2>
+            <h2>Completed Projects</h2>
             <div class="project-grid">
 
                 <div class="project-card">
@@ -639,6 +670,34 @@
                         <span class="tag">MapLibre GL</span>
                     </div>
                     <a href="https://coolcore.vercel.app" target="_blank" class="btn-link">View Live Demo <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/MAzam1999/Devweekends" target="_blank">LMS Platform — Course Marketplace on Vercel &amp; AWS EC2</a></h3>
+                    <p class="project-desc">
+                        Dev Weekends Fellowship project. Full-stack learning platform with Stripe Checkout and idempotent webhooks, Mux signed video playback, and Clerk role-based access (student / instructor / admin). One codebase ships two ways: Vercel, and a self-hosted Docker container on EC2 via a GitHub Actions → ECR → EC2 pipeline. Payment logic is covered by Vitest.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">Next.js 16</span>
+                        <span class="tag">Prisma</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">AWS EC2</span>
+                        <span class="tag">GitHub Actions</span>
+                    </div>
+                    <a href="https://github.com/MAzam1999/Devweekends" target="_blank" class="btn-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title"><a href="https://portfolio-mazam1999s-projects.vercel.app" target="_blank">Portfolio Site with Case Studies</a></h3>
+                    <p class="project-desc">
+                        Dev Weekends Fellowship project. Dependency-free static site (plain HTML, CSS and JavaScript) deployed on Vercel: a home page, three deep-dive case studies (QuranicLens, FreshTrack, LMS Platform) and a downloadable resume.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">HTML / CSS / JS</span>
+                        <span class="tag">Vercel</span>
+                        <span class="tag">Case Studies</span>
+                    </div>
+                    <a href="https://portfolio-mazam1999s-projects.vercel.app" target="_blank" class="btn-link">View Live Site <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="project-card">
@@ -805,6 +864,15 @@
             <div class="cert-grid">
 
                 <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h4>Dev Weekends Fellowship 2026 (Summer)</h4>
+                        <p>Certificate of Participation · Sep 29, 2026 · Engineering L0 &amp; L1, DSA, Data Engineering, Cloud &amp; DevOps</p>
+                        <span class="cert-badge">Fellowship</span><a href="fellowship-2026-summer.png" target="_blank">View certificate &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
                     <div class="cert-icon">🏆</div>
                     <div class="cert-info">
                         <h4>FortyGuard Hackathon '26</h4>
@@ -817,8 +885,35 @@
                     <div class="cert-icon">🏆</div>
                     <div class="cert-info">
                         <h4>Meta Hacker Cup 2023</h4>
-                        <p>Meta — Competitive Programming</p>
+                        <p>Meta — Advanced to Round 1 (Practice Round rank 2,590; Round 1 rank 6,262)</p>
+                        <span class="cert-badge">Achievement</span><a href="Meta%20Hacker%20Cup%20-%202023.pdf" target="_blank">View certificate &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">🏆</div>
+                    <div class="cert-info">
+                        <h4>Advent of Code 2023</h4>
+                        <p>Completed the annual programming-puzzle event</p>
                         <span class="cert-badge">Achievement</span>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">🏅</div>
+                    <div class="cert-info">
+                        <h4>Omdena Local Chapter Challenges</h4>
+                        <p>Completed 2 product projects (Fake News Detection in Liberia; Weather Prediction with ML) and earned the Rookie Collaborator badge. Supported by a letter of recommendation from Omdena.</p>
+                        <span class="cert-badge">Internship</span><a href="Omdena%20achievments.png" target="_blank">Achievements &rarr;</a><a href="LOR-%20Muhammad%20Azam.pdf" target="_blank">Recommendation letter &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h4>Aspire Leaders Program 2025 — Module 1</h4>
+                        <p>Aspire Institute — Personal and Professional Development (15 hours)</p>
+                        <span class="cert-badge">Certificate</span><a href="Aspire.PNG" target="_blank">View badge &rarr;</a>
                     </div>
                 </div>
 
@@ -889,8 +984,8 @@
                     <div class="cert-icon">📜</div>
                     <div class="cert-info">
                         <h4>Code in Place 2024</h4>
-                        <p>Stanford University</p>
-                        <span class="cert-badge">Certificate</span>
+                        <p>Stanford University — Completed all units and the course exam (Apr–Jun 2024)</p>
+                        <span class="cert-badge">Certificate</span><a href="Cod%20in%20Place%202024.pdf" target="_blank">View certificate &rarr;</a>
                     </div>
                 </div>
 
