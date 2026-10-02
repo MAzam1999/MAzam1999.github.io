@@ -439,20 +439,51 @@
         }
 
         .cert-card {
+            perspective: 1000px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .cert-inner {
+            display: grid;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .cert-card.flipped .cert-inner { transform: rotateY(180deg); }
+
+        .cert-front, .cert-back {
+            grid-area: 1 / 1;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
             background: var(--bg-card);
             border: 1px solid #ffffff;
             border-radius: 12px;
             padding: 20px 24px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            backdrop-filter: blur(10px);
+            min-height: 96px;
             box-shadow: var(--shadow-soft);
-            transition: all 0.2s;
+            backdrop-filter: blur(10px);
+            transition: box-shadow 0.2s, border-color 0.2s;
         }
 
-        .cert-card:hover {
-            transform: translateY(-2px);
+        .cert-front {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cert-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .cert-card:hover .cert-front,
+        .cert-card:hover .cert-back,
+        .cert-card:focus-visible .cert-front,
+        .cert-card:focus-visible .cert-back {
             box-shadow: var(--shadow-hover);
             border-color: rgba(37, 99, 235, 0.2);
         }
@@ -460,34 +491,23 @@
         .cert-icon {
             font-size: 1.5rem;
             flex-shrink: 0;
-            margin-top: 2px;
         }
 
-        .cert-info h4 {
-            margin: 0 0 4px 0;
+        .cert-front h4 {
+            margin: 0;
             font-size: 0.95rem;
             font-weight: 700;
             color: var(--text-primary);
         }
 
-        .cert-info p {
+        .cert-back p {
             margin: 0;
             font-size: 0.8rem;
             color: var(--text-secondary);
         }
 
-        .cert-info a {
-            color: var(--accent-color);
-            font-size: 0.78rem;
-            font-weight: 600;
-            text-decoration: none;
-            margin-left: 8px;
-        }
-
-        .cert-info a:hover { text-decoration: underline; }
-
         .cert-badge {
-            margin-top: 6px;
+            margin-top: 8px;
             display: inline-block;
             background: var(--accent-light);
             color: var(--accent-color);
@@ -863,138 +883,108 @@
             <h2>Certifications & Achievements</h2>
             <div class="cert-grid">
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>Certified Agentic and Robotic AI Engineer</h4>
-                        <p>PIAIC — Agentic AI, Generative AI, cloud-native AI microservices (FastAPI, Docker, Kubernetes)</p>
-                        <span class="cert-badge">Certificate</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>Certified Agentic and Robotic AI Engineer</h4></div>
+                        <div class="cert-back"><p>PIAIC — Agentic AI, Generative AI, cloud-native AI microservices (FastAPI, Docker, Kubernetes)</p><span class="cert-badge">Certificate</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>Dev Weekends Fellowship 2026 (Summer)</h4>
-                        <p>Certificate of Participation · Sep 29, 2026 · Engineering L0 &amp; L1, DSA, Data Engineering, Cloud &amp; DevOps</p>
-                        <span class="cert-badge">Fellowship</span><a href="fellowship-2026-summer.png" target="_blank">View certificate &rarr;</a>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>Dev Weekends Fellowship 2026 (Summer)</h4></div>
+                        <div class="cert-back"><p>Certificate of Participation · Sep 29, 2026 · Engineering L0 &amp; L1, DSA, Data Engineering, Cloud &amp; DevOps</p><span class="cert-badge">Fellowship</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">🏆</div>
-                    <div class="cert-info">
-                        <h4>FortyGuard Hackathon '26</h4>
-                        <p>Team Coolcore — Built CoolCore, a live heat-exposure decision-support app</p>
-                        <span class="cert-badge">Hackathon</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">🏆</div><h4>FortyGuard Hackathon '26</h4></div>
+                        <div class="cert-back"><p>Team Coolcore — Built CoolCore, a live heat-exposure decision-support app</p><span class="cert-badge">Hackathon</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">🏆</div>
-                    <div class="cert-info">
-                        <h4>Meta Hacker Cup 2023</h4>
-                        <p>Meta — Advanced to Round 1 (Practice Round rank 2,590; Round 1 rank 6,262)</p>
-                        <span class="cert-badge">Achievement</span><a href="Meta%20Hacker%20Cup%20-%202023.pdf" target="_blank">View certificate &rarr;</a>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">🏆</div><h4>Meta Hacker Cup 2023</h4></div>
+                        <div class="cert-back"><p>Meta — Advanced to Round 1 (Practice Round rank 2,590; Round 1 rank 6,262)</p><span class="cert-badge">Achievement</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">🏆</div>
-                    <div class="cert-info">
-                        <h4>Advent of Code 2023</h4>
-                        <p>Completed the annual programming-puzzle event</p>
-                        <span class="cert-badge">Achievement</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">🏆</div><h4>Advent of Code 2023</h4></div>
+                        <div class="cert-back"><p>Completed the annual programming-puzzle event</p><span class="cert-badge">Achievement</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">🏅</div>
-                    <div class="cert-info">
-                        <h4>Omdena Local Chapter Challenges</h4>
-                        <p>Completed 2 product projects (Fake News Detection in Liberia; Weather Prediction with ML) and earned the Rookie Collaborator badge. Supported by a letter of recommendation from Omdena.</p>
-                        <span class="cert-badge">Internship</span><a href="Omdena%20achievments.png" target="_blank">Achievements &rarr;</a><a href="LOR-%20Muhammad%20Azam.pdf" target="_blank">Recommendation letter &rarr;</a>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">🏅</div><h4>Omdena Local Chapter Challenges</h4></div>
+                        <div class="cert-back"><p>Completed 2 product projects (Fake News Detection in Liberia; Weather Prediction with ML) and earned the Rookie Collaborator badge. Supported by a letter of recommendation from Omdena.</p><span class="cert-badge">Internship</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>Aspire Leaders Program 2025 — Module 1</h4>
-                        <p>Aspire Institute — Personal and Professional Development (15 hours)</p>
-                        <span class="cert-badge">Certificate</span><a href="Aspire.PNG" target="_blank">View badge &rarr;</a>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>Aspire Leaders Program 2025 — Module 1</h4></div>
+                        <div class="cert-back"><p>Aspire Institute — Personal and Professional Development (15 hours)</p><span class="cert-badge">Certificate</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">🏅</div>
-                    <div class="cert-info">
-                        <h4>GRIP Internship</h4>
-                        <p>The Spark Foundation</p>
-                        <span class="cert-badge">Internship</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">🏅</div><h4>GRIP Internship</h4></div>
+                        <div class="cert-back"><p>The Spark Foundation</p><span class="cert-badge">Internship</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>Machine Learning Specialization</h4>
-                        <p>DeepLearning.AI · Stanford University</p>
-                        <span class="cert-badge">Coursera</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>Machine Learning Specialization</h4></div>
+                        <div class="cert-back"><p>DeepLearning.AI · Stanford University</p><span class="cert-badge">Coursera</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>Neural Networks and Deep Learning</h4>
-                        <p>DeepLearning.AI</p>
-                        <span class="cert-badge">Coursera</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>Neural Networks and Deep Learning</h4></div>
+                        <div class="cert-back"><p>DeepLearning.AI</p><span class="cert-badge">Coursera</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>Generative AI with LLMs</h4>
-                        <p>DeepLearning.AI · Amazon Web Services</p>
-                        <span class="cert-badge">Coursera</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>Generative AI with LLMs</h4></div>
+                        <div class="cert-back"><p>DeepLearning.AI · Amazon Web Services</p><span class="cert-badge">Coursera</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>AI Python for Beginners</h4>
-                        <p>DeepLearning.AI</p>
-                        <span class="cert-badge">Coursera</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>AI Python for Beginners</h4></div>
+                        <div class="cert-back"><p>DeepLearning.AI</p><span class="cert-badge">Coursera</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>Statistics with Python Specialization</h4>
-                        <p>University of Michigan</p>
-                        <span class="cert-badge">Coursera</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>Statistics with Python Specialization</h4></div>
+                        <div class="cert-back"><p>University of Michigan</p><span class="cert-badge">Coursera</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>Programming for Everybody (Python)</h4>
-                        <p>University of Michigan</p>
-                        <span class="cert-badge">Coursera</span>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>Programming for Everybody (Python)</h4></div>
+                        <div class="cert-back"><p>University of Michigan</p><span class="cert-badge">Coursera</span></div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <div class="cert-info">
-                        <h4>Code in Place 2024</h4>
-                        <p>Stanford University — Completed all units and the course exam (Apr–Jun 2024)</p>
-                        <span class="cert-badge">Certificate</span><a href="Cod%20in%20Place%202024.pdf" target="_blank">View certificate &rarr;</a>
+                <div class="cert-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="cert-inner">
+                        <div class="cert-front"><div class="cert-icon">📜</div><h4>Code in Place 2024</h4></div>
+                        <div class="cert-back"><p>Stanford University — Completed all units and the course exam (Apr–Jun 2024)</p><span class="cert-badge">Certificate</span></div>
                     </div>
                 </div>
 
@@ -1007,5 +997,17 @@
 
     </div>
 
+    <script>
+        document.querySelectorAll('.cert-card').forEach(function (card) {
+            function flip() {
+                var on = card.classList.toggle('flipped');
+                card.setAttribute('aria-pressed', on);
+            }
+            card.addEventListener('click', flip);
+            card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+            });
+        });
+    </script>
 </body>
 </html>
