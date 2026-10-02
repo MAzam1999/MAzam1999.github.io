@@ -1,20 +1,4 @@
-.gitignore
-.claude/
-Inventory.md
-OpenClaw.pdf
-Quran.md
-streak.md
-Trading.md
-video.md
-AI Python for Beginners.pdf
-Gen AI with LLMs.pdf
-Machine learning specializtion.pdf
-Neural Networks and Deep Learning.pdf
-Programming for everybody.pdf
-Statistics with Python specialization.pdf
-The Spark Foundation Internship.png
-Azam.png
-Muhammad_Azam.pdf
-
-Muhammd_Azam.pdf
-Azam.jpg
+# Ignore everything except the site entry point and this file
+*
+!.gitignore
+!index.html
